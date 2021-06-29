@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import Menu from './components/MenuComponent';
+import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import './App.css';
-import { DISHES } from './shared/dishes';
+import Main from './components/MainComponent'
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/configureStore';
 
-class App extends Component {
+const store = ConfigureStore();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes : DISHES
-    };
-  }
+class App extends React.Component {
+
   render() {
-  return (
-    <div className="App">
-      <Navbar dark color = "primary">
-          <div className = "container">
-          {/*<img src={logo} className="App-logo" alt="logo" />*/}
-            <NavbarBrand href = "/">EXXAM DESK</NavbarBrand>
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <Main />
           </div>
-        </Navbar>
-        <Menu dishes = {this.state.dishes} />
-    </div>
-  );
-}
+        </BrowserRouter>
+      </Provider>
+    );
+  }
+
+
 }
 
 export default App;
