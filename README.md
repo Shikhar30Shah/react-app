@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Fun Food Ristorante
+
+This is a responsive front-end web application of a restaurant developed with React and Redux.
+Login Form is added and designed with Modal from reactstrap. Application contains Menu, Feedback Form etc. 
+
 ## Available Scripts
 
 In the project directory, you can run:
